@@ -50,7 +50,7 @@ This tutorial shows how to use the `faas-cli` to deploy functions to Knative.
     kubectx knative-pi
     ```
 
-- You can edit and deploy the Knative yaml, or you can just generate and apply in one step
+- You can edit and deploy the Knative yaml, or you can generate and apply in one step, by piping the output to `kubectl`
     ```bash
     faas-cli generate --api=serving.knative.dev/v1 -f hello.yml -n default | kubectl apply -f -
     ```
