@@ -71,7 +71,7 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
     curl -d 'Hello World' -H "Content-Type: text/plain" $SERVICE_URL
     ```
 
-- The output is the return value from the source code [handler.js](./hello/handler.js) now you can go ahead and change the code based on [nodejsruntime](https://docs.openfaas.com/cli/templates/#nodejs-12-node12-asyncawait) contract, and publish a new image tag and Update the tag in [hello.yml](./hello.yml)
+- The output is the return value from the source code [handler.js](./hello/handler.js) now you can go ahead and change the code based on [nodejs runtime](https://docs.openfaas.com/cli/templates/#nodejs-12-node12-asyncawait) contract, and publish a new image tag and Update the tag in [hello.yml](./hello.yml)
     ```json
     {"status":"Received input: Hello World"}
     ```
