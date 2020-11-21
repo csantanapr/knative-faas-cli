@@ -5,7 +5,7 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
 
 - Install [Knative on Arm cluster like a Raspberry Pi](https://github.com/csantanapr/knative-pi)
 
-- Setup Docker-Desktop with experimental to enable [buildx](https://docs.docker.com/buildx/working-with-buildx/) this will be use to build multi-architecture imags including `arm64`.
+- Setup Docker-Desktop with experimental to enable [buildx](https://docs.docker.com/buildx/working-with-buildx/) this will be used to build multi-architecture images including `arm64`.
 
 - Install FaaS CLI using [arkade](https://github.com/alexellis/arkade)
     ```bash
@@ -27,7 +27,7 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
     faas-cli generate --api=serving.knative.dev/v1 -f hello.yml -n default
     ```
 
-- You can take the standard output redirect to a file, then add aditional atrributes to the Knative definition, by default the `faas-cli` generates a simple service with the container image uri that we published a previous step. This is a sample output:
+- You can take the standard output redirect to a file, then add additional attributes to the Knative definition, by default the `faas-cli` generates a simple service with the container image uri that we published a previous step. This is a sample output:
     ```yaml
     apiVersion: serving.knative.dev/v1
     kind: Service
