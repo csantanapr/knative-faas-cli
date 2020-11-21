@@ -1,23 +1,23 @@
 # Deploy OpenFaaS functions to Knative
 
-This tutorial shows how to use the `faas-cli` to deploy functions to Knative.
+This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-cli) to deploy functions to Knative.
 
 
 - Install [Knative on Arm cluster like a Raspberry Pi](https://github.com/csantanapr/knative-pi)
 
 - Setup Docker-Desktop with experimental to enable [buildx](https://docs.docker.com/buildx/working-with-buildx/) this will be use to build multi-architecture imags including `arm64`.
 
-- Install FaaS CLI using [arkade]
+- Install FaaS CLI using [arkade](https://github.com/alexellis/arkade)
     ```bash
     arkade get faas-cli
     ```
 
-- Create new app using one of the templates `csharp` `dockerfile` `go` `java11` `java11-vert-x` `node node12` `php7` `python` `python3` `python3-debian` `ruby`, set the flag `--prefix` to the prefix for the container registry and namespace, in my case I'm going to use `docker.io/csantanapr`
+- Create new app using one of the templates `csharp`, `dockerfile`, `go`, `java11`, `java11-vert-x`, `node`, `node12`, `php7`, `python`, `python3`, `python3-debian`, `ruby`. Set the flag `--prefix` to the prefix for the container registry and namespace, in my case I am using `docker.io/csantanapr`
     ```bash
     faas-cli new --lang node12 hello --prefix docker.io/csantanapr
     ```
 
-- Build and publish the container image leveraging `docker buildx`
+- Build and publish the container image leveraging `docker buildx` for two architectures.
     ```bash
     faas-cli publish -f hello.yml --platforms linux/amd64,linux/arm64
     ```
