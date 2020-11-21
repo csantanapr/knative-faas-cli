@@ -1,4 +1,4 @@
-# Deploy OpenFaaS functions to Knative
+# Deploy functions to Knative using the OpenFaaS CLI
 
 This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-cli) to deploy functions to Knative.
 
@@ -12,7 +12,7 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
     arkade get faas-cli
     ```
 
-- Create new app using one of the templates `csharp`, `dockerfile`, `go`, `java11`, `java11-vert-x`, `node`, `node12`, `php7`, `python`, `python3`, `python3-debian`, `ruby`. Set the flag `--prefix` to the prefix for the container registry and namespace, in my case I am using `docker.io/csantanapr`
+- Create new app using one of the default template store (ie `csharp`, `dockerfile`, `go`, `java11`, `java11-vert-x`, `node`, `node12`, `php7`, `python`, `python3`, `python3-debian`, `ruby`) Or run `faas-cli template store list` to see a range of other templates from the community. In this example I'm using `node12` and setting the flag `--prefix` for the container registry and namespace, in my case I am using `docker.io/csantanapr`
     ```bash
     faas-cli new --lang node12 hello --prefix docker.io/csantanapr
     ```
@@ -74,4 +74,13 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
 - The output is the return value from the source code [handler.js](./hello/handler.js) now you can go ahead and change the code, and publish a new image tag, and update the tag in [hello.yml](./hello.yml)
     ```json
     {"status":"Received input: Hello World"}
+    ```
+
+- You can also try `JSON`
+    ```bash
+    curl -d '{"msg":"Hello World"}' -H "Content-Type: application/json" $SERVICE_URL
+    ```
+    The output
+    ```json
+    {"status":"Received input: {\"msg\":\"Hello World\"}"}
     ```
