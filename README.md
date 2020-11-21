@@ -3,7 +3,7 @@
 This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-cli) to deploy functions to Knative.
 
 
-- Install [Knative on Arm cluster like a Raspberry Pi](https://github.com/csantanapr/knative-pi)
+- Install Knative on any Kubernetes following the [Knative Installation Guide](https://knative.dev/docs/install/any-kubernetes-cluster/). This tutorial works on any architecture that Knative supports, I will use Knative on Arm, Check out my tutorial [Knative on Raspberry Pi](https://github.com/csantanapr/knative-pi).
 
 - Setup Docker-Desktop with experimental to enable [buildx](https://docs.docker.com/buildx/working-with-buildx/) this will be used to build multi-architecture images including `arm64`.
 
