@@ -1,4 +1,5 @@
 template
 build
-hello.yaml
-hello/**
+hello.yml
+hello/
+service.yaml

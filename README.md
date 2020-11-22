@@ -32,13 +32,13 @@ This tutorial shows how to use the [faas-cli](https://github.com/openfaas/faas-c
     apiVersion: serving.knative.dev/v1
     kind: Service
     metadata:
-    name: hello
-    namespace: default
+      name: hello
+      namespace: default
     spec:
-    template:
+      template:
         spec:
-        containers:
-        - image: docker.io/csantanapr/hello:latest
+          containers:
+          - image: docker.io/csantanapr/hello:latest
     ```
     You can pipe it to `service.yaml` like this
     ```bash
